@@ -85,12 +85,8 @@
         <datalist id="managers"></datalist>
         <datalist id="inspectors"></datalist>
         <datalist id="participants"></datalist>
-    </form>
 
-    <script src="script.js"></script>
-</body>
-</html>
-<hr>
+        <hr>
         <div class="page-header page-break">S t r o n a | 2</div>
 
         <h2>PODSTAWOWE DANE OBIEKTU BUDOWLANEGO</h2>
@@ -161,6 +157,72 @@
                 <td></td>
             </tr>
         </table>
+
+        <table>
+            <tr>
+                <td>Powierzchnia</td>
+                <td>
+                    Powierzchnia zabudowy budynku > 2000m²
+                    <select name="area_2000" id="area_2000">
+                        <option value="TAK">TAK</option>
+                        <option value="NIE" selected>NIE</option>
+                        <option value="NIE DOTYCZY">NIE DOTYCZY</option>
+                    </select>
+                </td>
+                <td>
+                    Powierzchnia dachu obiektu budowlanego > 1000m²
+                    <select name="roof_1000" id="roof_1000">
+                        <option value="TAK" selected>TAK</option>
+                        <option value="NIE">NIE</option>
+                        <option value="NIE DOTYCZY">NIE DOTYCZY</option>
+                    </select>
+                </td>
+                <td>
+                    liczba kondygnacji obiektu:<br>
+                    nadziemnych: <input type="number" name="floors_above" id="floors_above" style="width: 50px;" value="2"><br>
+                    podziemnych: <input type="number" name="floors_below" id="floors_below" style="width: 50px;" value="0">
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>rok budowy</td>
+                <td><input type="number" name="build_year" id="build_year" value="2016"></td>
+            </tr>
+            <tr>
+                <td>powierzchnia zabudowy</td>
+                <td><input type="text" name="build_area" id="build_area" value="1660 m²"></td>
+            </tr>
+            <tr>
+                <td>powierzchnia użytkowa</td>
+                <td><input type="text" name="usable_area" id="usable_area" value="ok. 2100 m²"></td>
+            </tr>
+            <tr>
+                <td>powierzchnia całkowita</td>
+                <td><input type="text" name="total_area" id="total_area" value="ok. 2350 m²"></td>
+            </tr>
+            <tr>
+                <td>Wysokość budynku</td>
+                <td><input type="text" name="height" id="height" value="ok. 8 m"></td>
+            </tr>
+            <tr>
+                <td>ilość klatek schodowych</td>
+                <td><input type="number" name="staircases" id="staircases" value="2"></td>
+            </tr>
+            <tr>
+                <td>ilość lokali mieszkalnych</td>
+                <td><input type="text" name="apartments" id="apartments" value="Nie dotyczy"></td>
+            </tr>
+            <tr>
+                <td>ilość lokali użytkowych</td>
+                <td><input type="text" name="commercial_units" id="commercial_units" value="2 (produkcyjno-magazynowy i socjalno-biurowy)"></td>
+            </tr>
+            <tr>
+                <td>ilość miejsc postojowych</td>
+                <td><input type="number" name="parking_spots" id="parking_spots" value="15"></td>
+            </tr>
+        </table>
 <hr>
         <div class="page-header page-break">S t r o n a | 3</div>
 
@@ -183,11 +245,270 @@
             </tr>
         </table>
 
+        <h3>Przyjęte kryteria oceny stanu technicznego elementów budynku:</h3>
+
+        <table>
+            <tr>
+                <td>dobry</td>
+                <td>element może nie zagraża bezpieczeństwu życia i mienia przez okres najbliższych pięciu lat, pod warunkiem wykonywania prac konserwacyjnych</td>
+            </tr>
+            <tr>
+                <td>dostateczny</td>
+                <td>element przed upływem pięciu lat może ulec technicznemu zużyciu, określono termin kolejnego przeglądu technicznego lub wykonania opinii czy robót</td>
+            </tr>
+            <tr>
+                <td>niedostateczny</td>
+                <td>konieczne jest podjęcie czynności remontowych i zabezpieczeniowych, a określenie „awaryjny" byłoby nieodpowiednie</td>
+            </tr>
+            <tr>
+                <td>awaryjny</td>
+                <td>wymaga natychmiastowego podjęcie czynności remontowych i zabezpieczających</td>
+            </tr>
+        </table>
+
+        <div class="section-header">I. ZAKRES KONTROLI OBEJMUJE:</div>
+
+        <ol>
+            <li>Sprawdzenie wykonania zaleceń z poprzedniej kontroli,</li>
+            <li>Przegląd elementów budynku, budowli i instalacji narażonych na szkodliwe wpływy atmosferyczne i niszczące działania czynników występujących podczas użytkowania budynku, których uszkodzenia mogą powodować zagrożenie dla bezpieczeństwa osób, środowiska oraz konstrukcji budynku, instalacji i urządzeń służących ochronie środowiska,</li>
+            <li>Oględziny elementów budynku</li>
+            <li>Przegląd stanu technicznego elementów budynku i budowli i instalacji narażonych na szkodliwe wpływy atmosferyczne i niszczące działania czynników występujących podczas użytkowania</li>
+        </ol>
+
+        <div class="section-header">II. SPRAWDZENIE WYKONANIA ZALECEŃ Z POPRZEDNICH KONTROLI:</div>
+
+        <p>Przed rozpoczęciem kontroli zapoznano się z:</p>
+        <ol>
+            <li>protokołami z poprzednich kontroli: <input type="text" name="previous_protocols" id="previous_protocols" value="protokół przeglądu półrocznego z dnia 14.05.2024"></li>
+            <li>innymi dokumentami mającymi znaczenie dla oceny stanu technicznego: <input type="text" name="other_documents" id="other_documents" value="dokumentacja techniczna budynku"></li>
+        </ol>
+
+        <hr>
+        <div class="page-header page-break">S t r o n a | 4</div>
+
+        <table>
+            <tr>
+                <th>Element, urządzenie, instalacja</th>
+                <th>Stopień wykonania zaleceń tak/nie</th>
+                <th>Uwagi</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="element_1" id="element_1"></td>
+                <td><input type="text" name="element_status_1" id="element_status_1"></td>
+                <td><input type="text" name="element_notes_1" id="element_notes_1"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="element_2" id="element_2"></td>
+                <td><input type="text" name="element_status_2" id="element_status_2"></td>
+                <td><input type="text" name="element_notes_2" id="element_notes_2"></td>
+            </tr>
+        </table>
+        <button type="button" class="no-print" onclick="addElementRow()">+ Dodaj element</button>
+
+        <h3>Ocena realizacji zaleceń z poprzedniej kontroli</h3>
+
+        <table id="recommendations-table">
+            <tr>
+                <th>Lp.</th>
+                <th>Zalecenia z poprzedniej kontroli</th>
+                <th>Realizacja zaleceń</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input type="text" name="prev_recommendation_1" id="prev_recommendation_1" value="Usunięcie drobnych uszkodzeń tynku w okolicach rynien"></td>
+                <td><input type="text" name="prev_recommendation_status_1" id="prev_recommendation_status_1" value="Wykonano"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><input type="text" name="prev_recommendation_2" id="prev_recommendation_2" value="Kontrola drożności rynien"></td>
+                <td><input type="text" name="prev_recommendation_status_2" id="prev_recommendation_status_2" value="Wykonano"></td>
+            </tr>
+        </table>
+        <button type="button" class="no-print" onclick="addRecommendationRow()">+ Dodaj zalecenie</button>
+
+        <h3>W wyniku przeglądu technicznego stwierdzam stan awaryjny następujących elementów obiektu</h3>
+
+        <table id="emergency-table">
+            <tr>
+                <th>Lp.</th>
+                <th>Element obiektu</th>
+                <th>Zakres zalecanego pilnego remontu, naprawy lub robót zabezpieczających</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input type="text" name="emergency_element_1" id="emergency_element_1" value="Nie stwierdzono elementów w stanie awaryjnym"></td>
+                <td><input type="text" name="emergency_repair_1" id="emergency_repair_1"></td>
+            </tr>
+        </table>
+        <button type="button" class="no-print" onclick="addEmergencyRow()">+ Dodaj element</button>
+
+        <div class="section-header">III. USTALENIA ORAZ WNIOSKI PO SPRAWDZENIU STANU TECHNICZNEGO: / OCENA STANU TECHNICZNEGO</div>
+
+        <p>W trakcie kontroli ustalono:</p>
+
+        <!-- ELEMENTY PODZIEMNE -->
+        <div class="section-header">I. ELEMENTY PODZIEMNE BUDYNKU/OBIEKTU BUDOWLANEGO</div>
+
+        <table id="underground-elements-table">
+            <tr>
+                <th>Element</th>
+                <th>Opis stanu technicznego / materiał</th>
+                <th>Ocena stanu technicznego</th>
+                <th>Zalecenia</th>
+                <th>Nr. Fot.</th>
+                <th>Data wykonania zaleceń</th>
+            </tr>
+            <tr>
+                <td>1. Ławy /Stopy/ Płyta fundamentowa</td>
+                <td><input type="text" name="foundation_desc" id="foundation_desc" value="Stopy i ławy żelbetowe"></td>
+                <td>
+                    <select name="foundation_state" id="foundation_state">
+                        <option value="dobry" selected>dobry</option>
+                        <option value="dostateczny">dostateczny</option>
+                        <option value="niedostateczny">niedostateczny</option>
+                        <option value="awaryjny">awaryjny</option>
+                    </select>
+                </td>
+                <td><input type="text" name="foundation_recommendations" id="foundation_recommendations" value="brak"></td>
+                <td><input type="text" name="foundation_photo" id="foundation_photo"></td>
+                <td><input type="text" name="foundation_date" id="foundation_date"></td>
+            </tr>
+            <tr>
+                <td>2. Ściany fundamentowe, /słupy/ piwnic</td>
+                <td><input type="text" name="walls_desc" id="walls_desc" value="Żelbetowe, izolowane przeciwwilgociowo"></td>
+                <td>
+                    <select name="walls_state" id="walls_state">
+                        <option value="dobry" selected>dobry</option>
+                        <option value="dostateczny">dostateczny</option>
+                        <option value="niedostateczny">niedostateczny</option>
+                        <option value="awaryjny">awaryjny</option>
+                    </select>
+                </td>
+                <td><input type="text" name="walls_recommendations" id="walls_recommendations" value="brak"></td>
+                <td><input type="text" name="walls_photo" id="walls_photo"></td>
+                <td><input type="text" name="walls_date" id="walls_date"></td>
+            </tr>
+            <!-- Pozostałe elementy podziemne -->
+        </table>
+        <button type="button" class="no-print" onclick="addUndergroundElement()">+ Dodaj element podziemny</button>
+
+        <hr>
+        <div class="page-header page-break">S t r o n a | 5</div>
+
+        <!-- ELEMENTY DACHU -->
+        <div class="section-header">II. ELEMENTY DACHU I ODWODNIENIA</div>
+
+        <table id="roof-elements-table">
+            <tr>
+                <th>Element</th>
+                <th>Opis stanu technicznego / materiał</th>
+                <th>Ocena stanu technicznego</th>
+                <th>Zalecenia</th>
+                <th>Nr. Fot.</th>
+                <th>Data wykonania zaleceń</th>
+            </tr>
+            <tr>
+                <td>1. Wyjście na dach</td>
+                <td><input type="text" name="roof_exit_desc" id="roof_exit_desc" value="Drabina techniczna"></td>
+                <td>
+                    <select name="roof_exit_state" id="roof_exit_state">
+                        <option value="dobry" selected>dobry</option>
+                        <option value="dostateczny">dostateczny</option>
+                        <option value="niedostateczny">niedostateczny</option>
+                        <option value="awaryjny">awaryjny</option>
+                    </select>
+                </td>
+                <td><input type="text" name="roof_exit_recommendations" id="roof_exit_recommendations" value="brak"></td>
+                <td><input type="text" name="roof_exit_photo" id="roof_exit_photo"></td>
+                <td><input type="text" name="roof_exit_date" id="roof_exit_date"></td>
+            </tr>
+            <tr>
+                <td>2. Dach – Pokrycie</td>
+                <td><input type="text" name="roof_cover_desc" id="roof_cover_desc" value="papa termozgrzewalna"></td>
+                <td>
+                    <select name="roof_cover_state" id="roof_cover_state">
+                        <option value="dobry" selected>dobry</option>
+                        <option value="dostateczny">dostateczny</option>
+                        <option value="niedostateczny">niedostateczny</option>
+                        <option value="awaryjny">awaryjny</option>
+                    </select>
+                </td>
+                <td><input type="text" name="roof_cover_recommendations" id="roof_cover_recommendations" value="brak"></td>
+                <td><input type="text" name="roof_cover_photo" id="roof_cover_photo"></td>
+                <td><input type="text" name="roof_cover_date" id="roof_cover_date"></td>
+            </tr>
+            <!-- Pozostałe elementy dachu -->
+        </table>
+        <button type="button" class="no-print" onclick="addRoofElement()">+ Dodaj element dachu</button>
+<!-- ELEMENTY ZEWNĘTRZNE -->
+        <div class="section-header">III. ELEMENTY ZEWNĘTRZNE BUDYNKU/OBIEKTU BUDOWLANEGO</div>
+
+        <table id="external-elements-table">
+            <tr>
+                <th>Element</th>
+                <th>Opis stanu technicznego / materiał</th>
+                <th>Ocena stanu technicznego</th>
+                <th>Zalecenia</th>
+                <th>Nr. Fot.</th>
+                <th>Data wykonania zaleceń</th>
+            </tr>
+            <tr>
+                <td>1. Ściany zewnętrzne, gzymsy</td>
+                <td><input type="text" name="external_walls_desc" id="external_walls_desc" value="Płyty warstwowe"></td>
+                <td>
+                    <select name="external_walls_state" id="external_walls_state">
+                        <option value="dobry" selected>dobry</option>
+                        <option value="dostateczny">dostateczny</option>
+                        <option value="niedostateczny">niedostateczny</option>
+                        <option value="awaryjny">awaryjny</option>
+                    </select>
+                </td>
+                <td><input type="text" name="external_walls_recommendations" id="external_walls_recommendations" value="brak"></td>
+                <td><input type="text" name="external_walls_photo" id="external_walls_photo"></td>
+                <td><input type="text" name="external_walls_date" id="external_walls_date"></td>
+            </tr>
+            <!-- Pozostałe elementy zewnętrzne -->
+        </table>
+        <button type="button" class="no-print" onclick="addExternalElement()">+ Dodaj element zewnętrzny</button>
+
+        <!-- ELEMENTY WEWNĘTRZNE -->
+        <div class="section-header">IV. ELEMENTY WEWNĘTRZNE BUDYNKU/OBIEKTU BUDOWLANEGO</div>
+
+        <table id="internal-elements-table">
+            <tr>
+                <th>Element</th>
+                <th>Opis stanu technicznego / materiał</th>
+                <th>Ocena stanu technicznego</th>
+                <th>Zalecenia</th>
+                <th>Nr. Fot.</th>
+                <th>Data wykonania zaleceń</th>
+            </tr>
+            <tr>
+                <td>1. Klatki schodowe, hol, korytarze</td>
+                <td><input type="text" name="staircases_desc" id="staircases_desc" value="Wykończone płytkami gresowymi"></td>
+                <td>
+                    <select name="staircases_state" id="staircases_state">
+                        <option value="dobry" selected>dobry</option>
+                        <option value="dostateczny">dostateczny</option>
+                        <option value="niedostateczny">niedostateczny</option>
+                        <option value="awaryjny">awaryjny</option>
+                    </select>
+                </td>
+                <td><input type="text" name="staircases_recommendations" id="staircases_recommendations" value="brak"></td>
+                <td><input type="text" name="staircases_photo" id="staircases_photo"></td>
+                <td><input type="text" name="staircases_date" id="staircases_date"></td>
+            </tr>
+            <!-- Pozostałe elementy wewnętrzne -->
+        </table>
+        <button type="button" class="no-print" onclick="addInternalElement()">+ Dodaj element wewnętrzny</button>
+
+        <hr>
+        <div class="page-header page-break">S t r o n a | 6</div>
+        
         <div class="section-header">IV. ZALECENIA</div>
         
         <textarea name="recommendations" id="recommendations" rows="5">Zaleca się regularną kontrolę i konserwację systemu odwodnienia dachu przed sezonem jesienno-zimowym.</textarea>
-        
-        <div class="section-header">2. OKREŚLENIE ZAKRESU ROBÓT REMONTOWYCH I KOLEJNOŚCI ICH WYKONYWANIA:</div>
+<div class="section-header">2. OKREŚLENIE ZAKRESU ROBÓT REMONTOWYCH I KOLEJNOŚCI ICH WYKONYWANIA:</div>
         
         <table id="repairs-table">
             <tr>
@@ -201,6 +522,50 @@
         </table>
         <button type="button" class="no-print" onclick="addRepairRow()">+ Dodaj zakres czynności</button>
         
+        <div class="section-header">WNIOSKI MAJĄCE NA CELU USUNIĘCIE STWIERDZONYCH NIEPRAWIDŁOWOŚCI</div>
+        
+        <textarea name="conclusions" id="conclusions" rows="5">Nie stwierdzono nieprawidłowości wymagających natychmiastowej interwencji.</textarea>
+        
+        <div class="section-header">DOKUMENTACJA GRAFICZNA WYKONANA W TOKU KONTROLI:</div>
+        
+        <textarea name="documentation" id="documentation" rows="5">Nie wykonano dokumentacji graficznej podczas kontroli.</textarea>
+
+        <hr>
+        <div class="page-header page-break">S t r o n a | 7</div>
+
+        <div class="section-header">PODSUMOWANIE NAJWAŻNIEJSZYCH DANYCH:</div>
+        
+        <h4>1. Informacje o nieruchomości:</h4>
+        <ul>
+            <li>Numer działki ewidencyjnej: <input type="text" name="plot_number" id="plot_number" value="2414/27"></li>
+            <li>Obręb: <input type="text" name="district" id="district" value="LUBLINIEC"></li>
+            <li>Powierzchnia działki: <input type="text" name="plot_area" id="plot_area" value="0,65 ha (6500 m²)"></li>
+            <li>Procent zabudowy działki: <input type="text" name="plot_usage_percent" id="plot_usage_percent" value="25,5%"></li>
+        </ul>
+        
+        <h4>2. Parametry budynku:</h4>
+        <ul>
+            <li>Powierzchnia zabudowy łączna: <input type="text" name="total_build_area" id="total_build_area" value="1660 m²"></li>
+            <li>- część produkcyjno-magazynowa: <input type="text" name="production_area" id="production_area" value="ok. 1450 m²"></li>
+            <li>- część socjalno-biurowa: <input type="text" name="office_area" id="office_area" value="ok. 210 m²"></li>
+            <li>Wymiary budynku głównego: <input type="text" name="main_building_dimensions" id="main_building_dimensions" value="ok. 58 m x 25 m"></li>
+            <li>Wymiary części socjalno-biurowej: <input type="text" name="office_dimensions" id="office_dimensions" value="ok. 15 m x 14 m"></li>
+            <li>Powierzchnia użytkowa całkowita: <input type="text" name="total_usable_area" id="total_usable_area" value="ok. 2100 m²"></li>
+            <li>Powierzchnia dachu: <input type="text" name="roof_area" id="roof_area" value="ok. 1480 m²"></li>
+        </ul>
+        
+        <h4>3. Stan techniczny:</h4>
+        <ul>
+            <li>Wszystkie elementy budynku w stanie: <input type="text" name="overall_state" id="overall_state" value="dobrym"></li>
+            <li>Brak elementów w stanie awaryjnym: <input type="checkbox" name="no_emergency" id="no_emergency" checked></li>
+            <li>Brak pilnych prac remontowych: <input type="checkbox" name="no_urgent_repairs" id="no_urgent_repairs" checked></li>
+        </ul>
+        
+        <h4>4. Termin kolejnego przeglądu:</h4>
+        <ul>
+            <li>Przegląd półroczny: <input type="date" name="next_review_date" id="next_review_date" value="2025-05-15"></li>
+        </ul>
+
         <div class="signature">
             <p>Oświadczamy, iż ustalenia zawarte w protokole są zgodne ze stanem faktycznym.</p>
             <p>dokonujący kontroli okresowej stanu technicznego:<br>
@@ -208,3 +573,34 @@
             <p>..........................................................................<br>
             imię i nazwisko oraz nr uprawnień, specjalność (podpis)</p>
         </div>
+        
+        <div class="section-header">Załączniki do protokołu</div>
+        
+        <table id="attachments-table">
+            <tr>
+                <th>Nr</th>
+                <th>Opis załącznika</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input type="text" name="attachment_1" id="attachment_1" value="Dokumentacja fotograficzna - 4 zdjęcia"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><input type="text" name="attachment_2" id="attachment_2" value="Kopia uprawnień budowlanych"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input type="text" name="attachment_3" id="attachment_3"></td>
+            </tr>
+        </table>
+        <button type="button" class="no-print" onclick="addAttachmentRow()">+ Dodaj załącznik</button>
+        
+        <p><strong>Ogólny stan techniczny budynku jest zadowalający, używany zgodnie z przeznaczeniem oraz bezpieczny pod względem konstrukcyjnym.</strong></p>
+        
+        <p>W przypadku, gdy kontrolę przeprowadza zespół, składający się z osób posiadających wymagane w danym przypadku uprawnienia, może być sporządzony jeden protokół np. według tego wzoru, natomiast gdy kontrole przeprowadzane są osobno - to każda osoba posiadająca uprawnienia sporządza protokół z przeprowadzonej kontroli w danym zakresie.</p>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
