@@ -4,6 +4,21 @@ const fieldsToTrack = [
     'owner', 'manager', 'inspector', 'participant'
 ];
 
+// Funkcja dodająca wiersz do tabeli elementów
+function addElementRow() {
+    const table = document.querySelector('table:has(#element_1)');
+    const rowCount = table.rows.length;
+    const row = table.insertRow(-1);
+    
+    const cell1 = row.insertCell(0);
+    const cell2 = row.insertCell(1);
+    const cell3 = row.insertCell(2);
+    
+    cell1.innerHTML = `<input type="text" name="element_${rowCount}" id="element_${rowCount}">`;
+    cell2.innerHTML = `<input type="text" name="element_status_${rowCount}" id="element_status_${rowCount}">`;
+    cell3.innerHTML = `<input type="text" name="element_notes_${rowCount}" id="element_notes_${rowCount}">`;
+}
+
 // Funkcja dodająca wiersz do tabeli zaleceń
 function addRecommendationRow() {
     const table = document.getElementById('recommendations-table');
@@ -46,6 +61,121 @@ function addRepairRow() {
     cell1.innerHTML = `<input type="text" name="repair_scope_${rowCount}" id="repair_scope_${rowCount}">`;
     cell2.innerHTML = `<input type="text" name="repair_deadline_${rowCount}" id="repair_deadline_${rowCount}">`;
 }
+
+// Funkcja dodająca wiersz do tabeli załączników
+function addAttachmentRow() {
+    const table = document.getElementById('attachments-table');
+    const rowCount = table.rows.length;
+    const row = table.insertRow(-1);
+    
+    const cell1 = row.insertCell(0);
+    const cell2 = row.insertCell(1);
+    
+    cell1.innerHTML = rowCount;
+    cell2.innerHTML = `<input type="text" name="attachment_${rowCount}" id="attachment_${rowCount}">`;
+}
+
+// Funkcje dodające wiersze do tabel elementów budynku
+function addUndergroundElement() {
+    const table = document.getElementById('underground-elements-table');
+    const rowCount = table.rows.length;
+    const row = table.insertRow(-1);
+    
+    const cell1 = row.insertCell(0);
+    const cell2 = row.insertCell(1);
+    const cell3 = row.insertCell(2);
+    const cell4 = row.insertCell(3);
+    const cell5 = row.insertCell(4);
+    const cell6 = row.insertCell(5);
+    
+    cell1.innerHTML = `${rowCount}. <input type="text" name="underground_element_${rowCount}" id="underground_element_${rowCount}" placeholder="Nazwa elementu">`;
+    cell2.innerHTML = `<input type="text" name="underground_desc_${rowCount}" id="underground_desc_${rowCount}">`;
+    cell3.innerHTML = `<select name="underground_state_${rowCount}" id="underground_state_${rowCount}">
+                            <option value="dobry">dobry</option>
+                            <option value="dostateczny">dostateczny</option>
+                            <option value="niedostateczny">niedostateczny</option>
+                            <option value="awaryjny">awaryjny</option>
+                        </select>`;
+    cell4.innerHTML = `<input type="text" name="underground_recommendations_${rowCount}" id="underground_recommendations_${rowCount}">`;
+    cell5.innerHTML = `<input type="text" name="underground_photo_${rowCount}" id="underground_photo_${rowCount}">`;
+    cell6.innerHTML = `<input type="text" name="underground_date_${rowCount}" id="underground_date_${rowCount}">`;
+}
+
+function addRoofElement() {
+    const table = document.getElementById('roof-elements-table');
+    const rowCount = table.rows.length;
+    const row = table.insertRow(-1);
+    
+    const cell1 = row.insertCell(0);
+    const cell2 = row.insertCell(1);
+    const cell3 = row.insertCell(2);
+    const cell4 = row.insertCell(3);
+    const cell5 = row.insertCell(4);
+    const cell6 = row.insertCell(5);
+    
+    cell1.innerHTML = `${rowCount}. <input type="text" name="roof_element_${rowCount}" id="roof_element_${rowCount}" placeholder="Nazwa elementu">`;
+    cell2.innerHTML = `<input type="text" name="roof_desc_${rowCount}" id="roof_desc_${rowCount}">`;
+    cell3.innerHTML = `<select name="roof_state_${rowCount}" id="roof_state_${rowCount}">
+                            <option value="dobry">dobry</option>
+                            <option value="dostateczny">dostateczny</option>
+                            <option value="niedostateczny">niedostateczny</option>
+                            <option value="awaryjny">awaryjny</option>
+                        </select>`;
+    cell4.innerHTML = `<input type="text" name="roof_recommendations_${rowCount}" id="roof_recommendations_${rowCount}">`;
+    cell5.innerHTML = `<input type="text" name="roof_photo_${rowCount}" id="roof_photo_${rowCount}">`;
+    cell6.innerHTML = `<input type="text" name="roof_date_${rowCount}" id="roof_date_${rowCount}">`;
+}
+
+function addExternalElement() {
+    const table = document.getElementById('external-elements-table');
+    const rowCount = table.rows.length;
+    const row = table.insertRow(-1);
+    
+    const cell1 = row.insertCell(0);
+    const cell2 = row.insertCell(1);
+    const cell3 = row.insertCell(2);
+    const cell4 = row.insertCell(3);
+    const cell5 = row.insertCell(4);
+    const cell6 = row.insertCell(5);
+    
+    cell1.innerHTML = `${rowCount}. <input type="text" name="external_element_${rowCount}" id="external_element_${rowCount}" placeholder="Nazwa elementu">`;
+    cell2.innerHTML = `<input type="text" name="external_desc_${rowCount}" id="external_desc_${rowCount}">`;
+    cell3.innerHTML = `<select name="external_state_${rowCount}" id="external_state_${rowCount}">
+                            <option value="dobry">dobry</option>
+                            <option value="dostateczny">dostateczny</option>
+                            <option value="niedostateczny">niedostateczny</option>
+                            <option value="awaryjny">awaryjny</option>
+                        </select>`;
+    cell4.innerHTML = `<input type="text" name="external_recommendations_${rowCount}" id="external_recommendations_${rowCount}">`;
+    cell5.innerHTML = `<input type="text" name="external_photo_${rowCount}" id="external_photo_${rowCount}">`;
+    cell6.innerHTML = `<input type="text" name="external_date_${rowCount}" id="external_date_${rowCount}">`;
+}
+
+function addInternalElement() {
+    const table = document.getElementById('internal-elements-table');
+    const rowCount = table.rows.length;
+    const row = table.insertRow(-1);
+    
+    const cell1 = row.insertCell(0);
+    const cell2 = row.insertCell(1);
+    const cell3 = row.insertCell(2);
+    const cell4 = row.insertCell(3);
+    const cell5 = row.insertCell(4);
+    const cell6 = row.insertCell(5);
+    
+    cell1.innerHTML = `${rowCount}. <input type="text" name="internal_element_${rowCount}" id="internal_element_${rowCount}" placeholder="Nazwa elementu">`;
+    cell2.innerHTML = `<input type="text" name="internal_desc_${rowCount}" id="internal_desc_${rowCount}">`;
+    cell3.innerHTML = `<select name="internal_state_${rowCount}" id="internal_state_${rowCount}">
+                            <option value="dobry">dobry</option>
+                            <option value="dostateczny">dostateczny</option>
+                            <option value="niedostateczny">niedostateczny</option>
+                            <option value="awaryjny">awaryjny</option>
+                        </select>`;
+    cell4.innerHTML = `<input type="text" name="internal_recommendations_${rowCount}" id="internal_recommendations_${rowCount}">`;
+    cell5.innerHTML = `<input type="text" name="internal_photo_${rowCount}" id="internal_photo_${rowCount}">`;
+    cell6.innerHTML = `<input type="text" name="internal_date_${rowCount}" id="internal_date_${rowCount}">`;
+}
+
 // Zapisanie protokołu do pamięci lokalnej
 function saveProtocol() {
     const form = document.getElementById('protocolForm');
@@ -117,6 +247,7 @@ function loadProtocol() {
         alert('Brak zapisanego protokołu');
     }
 }
+
 // Funkcja eksportująca dane formularza do pliku JSON
 function exportToJson() {
     const form = document.getElementById('protocolForm');
